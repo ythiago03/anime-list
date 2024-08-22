@@ -1,6 +1,7 @@
-import "./styles/_main.scss";
+import './index.scss';
 import { useQuery } from "@tanstack/react-query";
 import fetchData from "./services/api";
+import Navbar from "./components/navbar/navbar";
 
 function App() {
   const { data } = useQuery({
@@ -11,7 +12,7 @@ function App() {
   
   return (
     <>
-    <h1>Hello word</h1>
+   <Navbar/>
        
     </>
   )

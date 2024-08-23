@@ -40,14 +40,17 @@ const Navbar = () => {
 
       <ul className="quick-links">
         <li>
+          <span className="material-symbols-outlined">groups</span>
           Watch2gether 
           <span className="tooltip">Watch2gether</span>
         </li>
         <li>
+          <span className="material-symbols-outlined">shuffle</span>
           Random
           <span className="tooltip">Random</span>
         </li>
         <li>
+          <span className="material-symbols-outlined">menu_book</span>
           Read Manga
         </li>
       </ul>

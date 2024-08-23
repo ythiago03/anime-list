@@ -134,6 +134,9 @@
 
     li{
       position: relative;
+      display: flex;
+      gap: .2rem;
+      cursor: pointer;
 
       .tooltip {
         position: absolute;
@@ -163,7 +166,7 @@
       }
 
       &:hover{
-        color: $purple;
+        color: lighten($purple, 30%);
 
         .tooltip{
           top: 30px;

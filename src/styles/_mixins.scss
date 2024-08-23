@@ -9,6 +9,12 @@
   align-items: center;
 }
 
+@mixin flex-align($justify: flex-start, $align: flex-start){
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
 @mixin font($size, $weight: normal, $align: left) {
   font-size: $size;
   font-weight: $weight;

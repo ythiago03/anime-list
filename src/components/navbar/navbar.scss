@@ -1,5 +1,189 @@
 @import 'src/index.scss';
 
 .navbar-container{
- 
+  @include flex-align($align: center);
+  background-color: $dark-gray;
+  color: $light-gray;
+  height: 4rem;
+  gap: 1rem;
+  padding: 0 1rem;
+
+  .menu-hamburguer {
+    .burger {
+      position: relative;
+      width: 30px;
+      height: 20px;
+      background: transparent;
+      cursor: pointer;
+      display: block;
+  
+      input {
+        display: none;
+      }
+  
+      span {
+        display: block;
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        background: $light-gray;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+  
+        &:nth-of-type(1) {
+          top: 0px;
+          transform-origin: left center;
+        }
+  
+        &:nth-of-type(2) {
+          top: 50%;
+          transform: translateY(-50%);
+          transform-origin: left center;
+        }
+  
+        &:nth-of-type(3) {
+          top: 100%;
+          transform-origin: left center;
+          transform: translateY(-100%);
+        }
+      }
+  
+      input:checked ~ span:nth-of-type(1) {
+        transform: rotate(45deg);
+        top: -4px;
+        left: 5px;
+      }
+  
+      input:checked ~ span:nth-of-type(2) {
+        width: 0%;
+        opacity: 0;
+      }
+  
+      input:checked ~ span:nth-of-type(3) {
+        transform: rotate(-45deg);
+        top: 17px;
+        left: 5px;
+      }
+    }
+  
+    ul {
+      display: none;
+    }
+  }
+  
+  .nav-logo{
+    width: 130px;
+  }
+
+  .group {
+    @include flex-align($align: center);
+    line-height: 28px;
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+
+    .input {
+      width: 100%;
+      height: 30px;
+      padding-left: 2.5rem;
+      box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
+      border: 0;
+      border-radius: 5px;
+      background-color: $black;
+      outline: none;
+      color: $light-gray;
+      transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+      cursor: text;
+      z-index: 0;
+    
+      &::placeholder {
+        color: $light-gray;
+      }
+    
+      &:hover {
+        box-shadow: 0 0 0 2.5px #2f303d, 0 0 25px -15px #000;
+      }
+    
+      &:active {
+        transform: scale(0.95);
+      }
+    
+      &:focus {
+        box-shadow: 0 0 0 2.5px #2f303d;
+        border: 1px solid $purple;
+      }
+    }
+    
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      fill: $light-gray;
+      width: 1rem;
+      height: 1rem;
+      pointer-events: none;
+      z-index: 1;
+    }
+  }
+
+  .quick-links{
+    display: flex;
+    gap: 1rem;
+
+    li{
+      position: relative;
+
+      .tooltip {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 14px;
+        background: $light-gray;
+        color: $black;
+        padding: 5px 8px;
+        border-radius: 5px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+        &::before {
+          position: absolute;
+          content: "";
+          height: 8px;
+          width: 8px;
+          background: $light-gray;
+          top: -3px;
+          left: 50%;
+          transform: translate(-50%) rotate(45deg);
+          transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+      }
+
+      &:hover{
+        color: $purple;
+
+        .tooltip{
+          top: 30px;
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+        }
+      }
+    }  
+  }
+
+  .user-wrapper{
+    margin-left: auto;
+
+    img{
+      vertical-align: middle;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid $light-gray;
+    }
+  }
 }

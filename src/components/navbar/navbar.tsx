@@ -42,12 +42,12 @@ const Navbar = () => {
         <li>
           <span className="material-symbols-outlined">groups</span>
           Watch2gether 
-          <span className="tooltip">Watch2gether</span>
+          <span className="tooltip">Watch with friends</span>
         </li>
         <li>
           <span className="material-symbols-outlined">shuffle</span>
           Random
-          <span className="tooltip">Random</span>
+          <span className="tooltip">Watch a random anime</span>
         </li>
         <li>
           <span className="material-symbols-outlined">menu_book</span>
